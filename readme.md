@@ -2,8 +2,10 @@
 
 The simplex method is an algorithm for maximizing an objective function. It operates on linear programs:
 
-$ max \ \ \mathbf{c}^T\mathbf{x} \\ 
-\text{s.t.} \ \ A\mathbf{x} \leq b \text{    and } \mathbf{x} \geq 0$
+```math
+max \ \ \mathbf{c}^T\mathbf{x} \\ 
+\text{s.t.} \ \ A\mathbf{x} \leq b \text{    and } \mathbf{x} \geq 0
+```
 
 Where $\mathbf{x}$ is the vector of variables of the problem, $A$ is a $p\times n$ matrix and $\mathbf{b}$ is the vector of source terms.
 

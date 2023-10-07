@@ -20,12 +20,12 @@ By adding slack variables coefficients $\mathbf{c_B^T}$ the new tableu will look
 
 ```math
 \begin{bmatrix}
-    1 &-c_B^T &-c_A^T &0 \\
+    1 &-\mathbf{c_B^T} &-\mathbf{c_A^T} &0 \\
     \mathbf{0} &I &A &\mathbf{b}
 \end{bmatrix}
 ```
 
-Where $I$ is the Identity matrix. The coefficients $c_B^T$ will initially be 0, so:
+Where $I$ is the Identity matrix. The coefficients $c_B^T$ will initially be 0, so the initial tableu will look like:
 
 ```math
 \begin{bmatrix}

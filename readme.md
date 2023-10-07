@@ -28,8 +28,8 @@ By adding slack variables coefficients $\mathbf{c_B^T}$ the new tableu will look
 Where $I$ is the Identity matrix. The coefficients $c_B^T$ will initially be 0, so the initial tableu will look like:
 
 ```math
-\begin{bmatrix}
-    \text{tableau} = 1 &\mathbf{0^T} &-\bar{\mathbf{c}}_A^T &z_B \\
+\text{tableau} = \begin{bmatrix}
+     1 &\mathbf{0^T} &-\bar{\mathbf{c}}_A^T &z_B \\
     \mathbf{0} &I &A &\mathbf{b}
 \end{bmatrix}
 ```

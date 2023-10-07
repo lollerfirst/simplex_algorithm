@@ -23,6 +23,9 @@ def simplex_maximize(c, A, b):
     # Initialize the tableau
     tableau = np.vstack((np.hstack((-c, np.zeros(1))),
                          np.hstack((A_slack, np.atleast_2d(b).T))))
+    
+    #tableau = tableau.T
+
     iteration = 1
 
     while True:
@@ -51,18 +54,15 @@ def simplex_maximize(c, A, b):
         iteration += 1
 
     # Extract the solution and objective function value
-    x = tableau[0, -1 * (m + 1):-1]
-    max_value = -tableau[0, -1]
+    max_value = tableau[0,-1]
 
     return x, max_value
 
 # Example usage:
-c = [2, 3, 1, 2]  # Coefficients of the objective function to maximize: -2x1 - 3x2
-A = [[1, 1, 2, 5],  # Coefficients of the constraints: x1 + x2 <= 4, 2x1 + x2 <= 7
-     [2, 1, 4, 1],
-     [4, 3, 4, 2],
-     [3, 1, 6, 1]]
-b = [4, 7, 11, 1]    # Right-hand side of the constraints
+c = [2, 3, 4]  # Coefficients of the objective function to maximize: -2x1 - 3x2
+A = [[3, 2, 1],  # Coefficients of the constraints: x1 + x2 <= 4, 2x1 + x2 <= 7
+     [2, 5, 3]]
+b = [10, 15]    # Right-hand side of the constraints
 
 x, max_value = simplex_maximize(c, A, b)
 print("Optimal solution:", x)

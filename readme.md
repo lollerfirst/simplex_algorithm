@@ -44,7 +44,7 @@ The geometrical operation of moving from a basic feasible solution to an adjacen
 Since $-\mathbf{\bar{c}^T}$ represents the vector of relative cost coefficients for the variables $\mathbf{x}$, choosing the index of the largest entry ensures the variable entering the basis maximizes the objective function for the current iteration. So, the index $i$ is chosen as follows:
 
 ```math 
-i = \arg \max_{k \in \{1, 2, \ \ldots \ , n\}}(-\bar{c}[k])$
+i = \mathop{\arg \max}\limits_{k \in \{1, 2, \ \ldots \ , n\}}(-\bar{c}[k])$
 ```
 ## Leaving Variable Selection
 The pivot element is the chosen amongst the element of the $i$-th column. In particular, the pivot element $p$ is chosen as the entry with the lowest ratio to his corresponding entry in the $b$ column. This is called the minimum-ratio-test:

@@ -6,7 +6,7 @@ The simplex method is an algorithm for maximizing an objective function. It oper
 max \ \ \mathbf{c}^T\mathbf{x} \ \ \text{s.t.} \ \ A\mathbf{x} \leq b \text{    and } \mathbf{x} \geq 0
 ```
 
-Where $\mathbf{x}$ is the vector of variables of the problem, $A$ is a $p\times n$ matrix and $\mathbf{b}$ is the vector of source terms.
+Where $\mathbf{x}$ is the vector of variables of the problem, $A$ is a $m\times n$ matrix and $\mathbf{b}$ is the vector of source terms.
 
 In geometric terms, the feasible region defined by all values of $\mathbf{x}$ such that $A x ≤ b$ and $\forall{i,x}: i \geq 0$ is a (possibly unbounded) convex polytope. An extreme point or vertex of this polytope is known as basic feasible solution (BFS).
 

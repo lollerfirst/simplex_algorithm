@@ -15,3 +15,22 @@ A linear program in standard form can be represented as a tableau of the form
 ```math
 \begin{bmatrix}1&-\mathbf {c} ^{T}&0\\0&\mathbf {A} &\mathbf {b} \end{bmatrix}
 ```
+
+By adding slack variables coefficients $\mathbf{c_B^T}$ the new tableu will look like:
+
+```math
+\begin{bmatrix}
+    1 &-c_B^T &-c_A^T &0 \\
+    \mathbf{0} &I &A &\mathbf{b}
+\end{bmatrix}
+```
+
+Where $I$ is the Identity matrix. The coefficients $c_B^T$ will initially be 0, so:
+
+```math
+\begin{bmatrix}
+    1 &\mathbf{0^T} &-\bar{\mathbf{c}}_A^T &z_B \\
+    \mathbf{0} &I &A &\mathbf{b}
+\end{bmatrix}
+```
+Where $\bar{\mathbf{c}}_A^T$ are the relative cost coefficients for the non-basic variables (How much the solution changes for each unit change of non-basic variable) and $z_B$ is the value of the Objective function evalued at the current basic feasible solution.

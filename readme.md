@@ -34,3 +34,5 @@ Where $I$ is the Identity matrix. The coefficients $c_B^T$ will initially be 0, 
 \end{bmatrix}
 ```
 Where $\bar{\mathbf{c}}_A^T$ are the relative cost coefficients for the non-basic variables (How much the solution changes for each unit change of non-basic variable) and $z_B$ is the value of the Objective function evalued at the current basic feasible solution.
+
+## Pivot Operations

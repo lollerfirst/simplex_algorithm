@@ -1,5 +1,5 @@
 # Simplex Method
-
+## The Tableau
 The simplex method is an algorithm for maximizing an objective function. It operates on linear programs:
 
 ```math

@@ -14,11 +14,8 @@ def simplex_maximize(c, A, b):
     # Add slack variables to convert inequalities to equalities
     m, n = A.shape
     A_slack = np.hstack((A, np.eye(m)))
-    z = np.zeros(m)
-    A_slack = np.hstack((np.atleast_2d(z).T, A_slack))
 
     c = np.concatenate((c, np.zeros(m)))
-    c = np.concatenate((np.array([-1]), c))
 
     # Initialize the tableau
     tableau = np.vstack((np.hstack((-c, np.zeros(1))),
@@ -31,10 +28,10 @@ def simplex_maximize(c, A, b):
         print(f"Iteration {iteration}:\n", tableau)
 
         # Find the entering variable (most negative coefficient in the objective function)
-        entering_col = np.argmin(tableau[0, :-1])
+        entering_col = np.argmax(tableau[0, :-1])
 
         # Check for optimality
-        if tableau[0, entering_col] >= 0:
+        if tableau[0, entering_col] <= 0:
             break
 
         # Find the leaving variable (minimum ratio test)
@@ -53,12 +50,12 @@ def simplex_maximize(c, A, b):
         iteration += 1
 
     # Extract the solution and objective function value
-    max_value = tableau[0,-1]
+    max_value = -tableau[0,-1]
     x = np.array(tableau[1:, -1])
     return x, max_value
 
 # Example usage:
-c = [2, 3, 4]  # Coefficients of the objective function to maximize: -2x1 - 3x2
+c = [-2, -3, -4]  # Coefficients of the objective function to maximize: -2x1 - 3x2
 A = [[3, 2, 1],  # Coefficients of the constraints: x1 + x2 <= 4, 2x1 + x2 <= 7
      [2, 5, 3]]
 b = [10, 15]    # Right-hand side of the constraints

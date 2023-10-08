@@ -24,7 +24,6 @@ def simplex_maximize(c, A, b):
     tableau = np.vstack((np.hstack((-c, np.zeros(1))),
                          np.hstack((A_slack, np.atleast_2d(b).T))))
     
-    #tableau = tableau.T
 
     iteration = 1
 
@@ -55,7 +54,7 @@ def simplex_maximize(c, A, b):
 
     # Extract the solution and objective function value
     max_value = tableau[0,-1]
-
+    x = np.array(tableau[1:, -1])
     return x, max_value
 
 # Example usage:

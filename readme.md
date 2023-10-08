@@ -52,3 +52,6 @@ The pivot element is the chosen amongst the element of the $i$-th column. In par
 ```math
 j = \mathop{\arg \min}\limits_{k \in \{2, 3, \ \ldots \, m\}} \left( \frac{\text{tableau}[k,i]}{\text{tableau}[k,-1]} \right)
 ```
+## Extracting the results from the tableau
+
+When $max(-\mathbf{\bar{c}}^T) \leq 0$, the optimal value for the objective function is available as $z_B$ (the last entry of the first row) and the the solution can be extracted from the $\mathbf{b}$ column of the tableau.
